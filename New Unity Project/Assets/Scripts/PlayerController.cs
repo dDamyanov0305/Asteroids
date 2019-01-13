@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float PlayerSpeed = 0.2f;
 
 
-    void Awake()
+    void Start()
     {
         
         AsteroidSpawner.Instance.RegisterPlayer(gameObject);
