@@ -322,7 +322,7 @@ MonoBehaviour:
   ProjectileToSpawn: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 2}
   SpawnPosition: {fileID: 4139675452979124}
   guns: 0
-  NextShotTime: 2
+  NextShotTime: 1
 --- !u!135 &135817350445597140
 SphereCollider:
   m_ObjectHideFlags: 1

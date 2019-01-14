@@ -162,7 +162,7 @@ public class AsteroidSpawner : MonoBehaviour
         List<Vector3> asteroidPositions = FindFreePositions(AsteroidsCount);
         for (int i = 0; i < asteroidPositions.Count; ++i)
         {
-            int randomVal = Random.Range(min, 4);
+            int randomVal = Random.Range(min, 3);
             if (randomVal == 1)
             {
                 GameObject obj = Instantiate(EnemyPrefab, asteroidPositions[i],Quaternion.identity);
