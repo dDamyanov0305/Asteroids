@@ -9,24 +9,23 @@ public class Weapon : MonoBehaviour {
     public Transform SpawnPosition;
     public int guns;
 
-    float NextShotTime = 0;
+    [SerializeField]float NextShotTime;
 
-
+    private void Start()
+    {
+        NextShotTime = NextShotTime + Time.time;
+    }
     private void Update()
     {
-        guns = GetComponent<HitReceiver>().health;
+        guns = GetComponent<HitReceiver>().health>3 ? 3 : GetComponent<HitReceiver>().health;
     }
-    IEnumerator waitUntilShoot()
-    {
    
-        yield return new WaitForSeconds(3);
-    }
 
     public void Shoot()
     {
         float mult = 0.5f; ;
         GameObject newProjectile;
-        StartCoroutine(waitUntilShoot());
+        
 
         float cooldown = 1 / ShotsPerSecond;
 
@@ -46,30 +45,10 @@ public class Weapon : MonoBehaviour {
 
                 GetComponent<AudioSource>().Play();
                 NextShotTime = Time.time + cooldown;
-                //mult *= -1;
+                
                 
             }
-            /*if (guns > 1)
-            {
-                
-                newProjectile = Instantiate(ProjectileToSpawn, SpawnPosition.position + new Vector3(guns * 0.5f, 0, 0), SpawnPosition.rotation);
-                Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), newProjectile.GetComponent<Collider>());
-                newProjectile = Instantiate(ProjectileToSpawn, SpawnPosition.position + new Vector3(-guns * 0.5f, 0, 0), SpawnPosition.rotation);
-                GetComponent<AudioSource>().Play();
-                Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), newProjectile.GetComponent<Collider>());
-                NextShotTime = Time.time + cooldown;
-            }
-            else
-            {
-                newProjectile = Instantiate(ProjectileToSpawn, SpawnPosition.position, SpawnPosition.rotation);
-                GetComponent<AudioSource>().Play();
-                Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), newProjectile.GetComponent<Collider>());
-                NextShotTime = Time.time + cooldown;
-            }
-            newProjectile = Instantiate(ProjectileToSpawn, SpawnPosition.position, SpawnPosition.rotation);
-            GetComponent<AudioSource>().Play();
-            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), newProjectile.GetComponent<Collider>());
-            NextShotTime = Time.time + cooldown;*/
+           
         }
     }
 }

@@ -318,6 +318,7 @@ MonoBehaviour:
   ProjectileToSpawn: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   SpawnPosition: {fileID: 4752166360087416}
   guns: 0
+  NextShotTime: 0
 --- !u!114 &114185253116081600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,7 +360,7 @@ MonoBehaviour:
   DeflectionAngle: 45
   DestructionFXDuration: 0.5
   DebugDraw: 0
-  health: 10
+  health: 1000
 --- !u!114 &114930998595648772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc32f839f284b24386503cb4184a5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: {fileID: 0}
 --- !u!135 &135822710575642542
 SphereCollider:
   m_ObjectHideFlags: 1

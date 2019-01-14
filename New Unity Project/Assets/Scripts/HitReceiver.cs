@@ -13,7 +13,7 @@ public class HitReceiver : MonoBehaviour {
 	public bool DebugDraw = false;
     public int health;
 
-    private void Start()
+    private void Awake()
     {
         health = 1;
     }

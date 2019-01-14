@@ -80,14 +80,16 @@ public class AsteroidSpawner : MonoBehaviour
         {
             
             waveSpawner.SetActive(true);
-            waveSpawner.GetComponent<TextMeshProUGUI>().text = "wave " + wave.ToString();
-            AsteroidsCount *= wave++;
+            waveSpawner.GetComponent<TextMeshProUGUI>().text = "wave" + wave.ToString();
+            AsteroidsCount = ++wave;
+
             yield return new WaitForSeconds(3);
 
             waveSpawner.SetActive(false);
             CreatePlayableGrid();
             MarkPlayerSafeArea();
             SpawnNewAsteroids();
+
             yield return new WaitForSeconds(waveWait);
         }
     }
@@ -163,7 +165,13 @@ public class AsteroidSpawner : MonoBehaviour
             int randomVal = Random.Range(min, 4);
             if (randomVal == 1)
             {
-                Instantiate(EnemyPrefab, asteroidPositions[i],Quaternion.identity);
+                GameObject obj = Instantiate(EnemyPrefab, asteroidPositions[i],Quaternion.identity);
+
+                if (wave-1 / 5 > 0)
+                {
+                    obj.GetComponent<HitReceiver>().health+=(int)(wave-1)/5;
+
+                }
             }
             else
             {

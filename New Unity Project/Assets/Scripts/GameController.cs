@@ -72,14 +72,14 @@ public class GameController : MonoBehaviour
     {
         menu.transform.Find("GameState").GetComponent<TextMeshProUGUI>().text = "Game Paused";
         menu.transform.Find("MenuScore").GetComponent<TextMeshProUGUI>().text = text.text;
-        menu.transform.Find("MenuText").GetComponent<TextMeshProUGUI>().text = "Press 'r' to resume";
+        menu.transform.Find("MenuText").GetComponent<TextMeshProUGUI>().text = "Press 'space' to resume";
     }
 
     void setMenuOnStart()
     {
         menu.transform.Find("GameState").GetComponent<TextMeshProUGUI>().text = "Asteroids";
-        menu.transform.Find("MenuScore").GetComponent<TextMeshProUGUI>().text = "Best score: "+ bestScore.ToString();
-        menu.transform.Find("MenuText").GetComponent<TextMeshProUGUI>().text = "Press space to start";
+        menu.transform.Find("MenuScore").GetComponent<TextMeshProUGUI>().text = "Best score:"+ bestScore.ToString();
+        menu.transform.Find("MenuText").GetComponent<TextMeshProUGUI>().text = "Press 'space' to start";
     }
 
     public void SetMenuOnGameOver()
@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
     {
         if (mainPlayer == null)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             SetMenuOnGameOver();
             showMenu();
             gameOver = true;
@@ -148,7 +148,7 @@ public class GameController : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        text.text = "Score: " + score.ToString();
+        text.text = "Score:" + score.ToString();
 
     }
 

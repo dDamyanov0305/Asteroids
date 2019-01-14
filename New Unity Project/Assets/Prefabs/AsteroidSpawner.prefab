@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114144100443253298}
   m_Layer: 0
   m_Name: AsteroidSpawner
-  m_TagString: Untagged
+  m_TagString: AsteroidSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1829067654417094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9363714, y: 0.109995164, z: 2.473256}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,15 +51,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7f98f507441fb4b8d337f566ec0d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AsteroidsCount: 5
+  wave: 0
+  AsteroidsCount: 10
   AsteroidPrefab: {fileID: 1577336602019996, guid: 150cdef8f70d6484fa0ef47585d68f4a,
     type: 2}
   EnemyPrefab: {fileID: 1009181329431958, guid: 1670bd74dbf5465428f0678063486837,
     type: 2}
   PlayableGridCellSize: 1.1
   PlayerSafeCells: 1
-  ShowDebugDraw: 0
+  ShowDebugDraw: 1
   startWait: 1
   waveWait: 10
   min: 1
-  max: 4
+  PlayerShip: {fileID: 0}
+  waveSpawner: {fileID: 0}
